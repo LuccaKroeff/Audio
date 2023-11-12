@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\lucca\\Desktop\\INF-01120\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\INF01120.bundle.scp.css",
+      "PackagePath": "staticwebassets\\INF01120.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\lucca\\Desktop\\INF-01120\\wwwroot\\Images\\MusicalNote.png",
+      "PackagePath": "staticwebassets\\Images\\MusicalNote.png"
+    },
+    {
+      "Id": "C:\\Users\\lucca\\Desktop\\INF-01120\\wwwroot\\Images\\MusicalNotes.png",
+      "PackagePath": "staticwebassets\\Images\\MusicalNotes.png"
+    },
+    {
+      "Id": "C:\\Users\\lucca\\Desktop\\INF-01120\\wwwroot\\Images\\QuestionMark.png",
+      "PackagePath": "staticwebassets\\Images\\QuestionMark.png"
+    },
+    {
+      "Id": "C:\\Users\\lucca\\Desktop\\INF-01120\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.INF01120.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.INF01120.props",
+      "PackagePath": "build\\INF01120.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.INF01120.props",
+      "PackagePath": "buildMultiTargeting\\INF01120.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.INF01120.props",
+      "PackagePath": "buildTransitive\\INF01120.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

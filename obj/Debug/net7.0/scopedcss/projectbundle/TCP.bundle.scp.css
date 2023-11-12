@@ -1,0 +1,66 @@
+/* _content/TCP/Pages/Index.razor.rz.scp.css */
+*[b-o2t057y55h] {
+    margin: 0;
+    padding: 0;
+}
+
+body[b-o2t057y55h] {
+    background-image: linear-gradient(to bottom right, purple, green);
+    background-attachment: fixed;
+}
+
+div[b-o2t057y55h] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+}
+
+button[b-o2t057y55h] {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+    transition: transform .7s ease-in-out;
+    margin-left: 10px;
+}
+
+    button:hover[b-o2t057y55h] {
+        transform: rotate(360deg);
+    }
+
+img[b-o2t057y55h] {
+    width: 70px;
+    height: 70px;
+}
+
+textarea[type="text"][b-o2t057y55h] {
+    padding: 10px;
+    border: 2px solid #314de4;
+    outline: none;
+    border-radius: 5px;
+    font-size: 24px;
+    color: #314de4;
+    resize: none;
+}
+
+.text[b-o2t057y55h] {
+    font-size: 60px;
+    color: #314de4;
+    font-family: Arial;
+}
+
+table[b-o2t057y55h] {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+}
+
+td[b-o2t057y55h], th[b-o2t057y55h] {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even)[b-o2t057y55h] {
+    background-color: #dddddd;
+}

@@ -1,0 +1,76 @@
+/* _content/INF01120/Pages/Index.razor.rz.scp.css */
+*[b-ygyzu5qkgy] {
+    margin: 0;
+    padding: 0;
+    font-family: fantasy;
+    box-sizing: border-box;
+}
+
+header[b-ygyzu5qkgy] {
+    background-color: darkslateblue;
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+}
+
+body[b-ygyzu5qkgy] {
+    background-image: linear-gradient(to bottom right, purple, green);
+    background-attachment: fixed;
+}
+
+div[b-ygyzu5qkgy] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+}
+
+button[b-ygyzu5qkgy] {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+    transition: transform .7s ease-in-out;
+    margin-left: 10px;
+}
+
+button:hover[b-ygyzu5qkgy] {
+    transform: rotate(360deg);
+}
+
+textarea[type="text"][b-ygyzu5qkgy] {
+    padding: 10px;
+    border: 2px solid darkslateblue;
+    outline-color: darkslateblue;
+    border-radius: 5px;
+    font-size: 24px;
+    resize: none;
+    text-align: justify;
+}
+
+table[b-ygyzu5qkgy] {
+    border-color: darkslateblue;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.row[b-ygyzu5qkgy] {
+    align-items: normal;
+}
+
+.column[b-ygyzu5qkgy] {
+    align-items: normal;
+}
+
+td[b-ygyzu5qkgy], th[b-ygyzu5qkgy] {
+    max-width: 500px;
+    border: 2px solid darkslateblue;
+    text-align: justify;
+    padding: 10px;
+    background-color: white;
+}
+
+input[type='file'][b-ygyzu5qkgy] {
+    color: transparent;
+}

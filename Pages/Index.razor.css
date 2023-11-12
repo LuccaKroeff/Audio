@@ -1,0 +1,75 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-family: fantasy;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: darkslateblue;
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+}
+
+body {
+    background-image: linear-gradient(to bottom right, purple, green);
+    background-attachment: fixed;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+    transition: transform .7s ease-in-out;
+    margin-left: 10px;
+}
+
+button:hover {
+    transform: rotate(360deg);
+}
+
+textarea[type="text"] {
+    padding: 10px;
+    border: 2px solid darkslateblue;
+    outline-color: darkslateblue;
+    border-radius: 5px;
+    font-size: 24px;
+    resize: none;
+    text-align: justify;
+}
+
+table {
+    border-color: darkslateblue;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.row {
+    align-items: normal;
+}
+
+.column {
+    align-items: normal;
+}
+
+td, th {
+    max-width: 500px;
+    border: 2px solid darkslateblue;
+    text-align: justify;
+    padding: 10px;
+    background-color: white;
+}
+
+input[type='file'] {
+    color: transparent;
+}

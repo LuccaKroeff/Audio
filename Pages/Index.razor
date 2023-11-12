@@ -1,0 +1,212 @@
+﻿@page "/"
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<header>
+    INF01120: Técnicas de Construção de Programas | Trabalho Prático
+</header>
+
+<body>
+
+    <div>
+        <img src="Images/MusicalNotes.png" alt="buttonpng" border="0" width=500 height=200/>
+    </div>
+
+    <div>
+
+        <button type="submit" title=@INF01120IndexController.HoverText @onclick="() => INF01120IndexController.ControlInstructions()">
+            <img type="button "src="Images/QuestionMark.png" alt="buttonpng" border="0" width=70 height=70/>
+        </button>
+
+        <text>&nbsp&nbsp;</text>
+
+        <textarea type="text" rows="5" cols="25" maxlength="100" @bind="IndexInputText" @oninput="@((e) => { INF01120IndexController.InputText=(string?)e.Value;})" bind=@INF01120IndexController.InputText placeholder ="Digite um texto nessa caixa de texto ou envie um arquivo txt pelo botão abaixo. O máximo número de caracteres é 100."/>
+
+        <button type="submit" title="Gerar música." disabled=@(INF01120IndexController.InputText == null || INF01120IndexController.InputText.Length == 0) @onclick="() => GenerateMusic()">
+            <img src="Images/MusicalNote.png" alt="buttonpng" border="0" width=70 height=70/>
+        </button>
+
+    </div>
+
+    <div>
+        <InputFile OnChange="UploadFile" accept=".txt" style="color: transparent" />
+    </div>
+
+    <div>
+        <audio controls>
+            <source src="../" type="audio/wav">
+        </audio>
+    </div>
+
+    @if (TestVariableShowActions)
+    {
+        <div>
+            @foreach (string action in TestVariableActions)
+            {
+                <div>
+                    @action <text>&nbsp;</text>
+                </div>
+            }
+        </div>
+    }
+
+    <div>
+        @if (INF01120IndexController.ShowInstructions)
+        {
+            <div class="row">
+                <div class="column">
+                    <table>
+                        <tr>
+                            <th>Texto</th>
+                            <th>Ação</th>                           
+                        </tr>
+                        <tr>
+                            <td>Letra 'A'</td>
+                            <td>Nota Lá</td>
+                        </tr>
+                        <tr>
+                            <td>Letra 'B'</td>
+                            <td>Nota Si</td>
+                        </tr>
+                        <tr>
+                            <td>Letra 'C'</td>
+                            <td>Nota Dó</td>
+                        </tr>
+                        <tr>
+                            <td>Letra 'D'</td>
+                            <td>Nota Ré</td>
+                        </tr>
+                        <tr>
+                            <td>Letra 'E'</td>
+                            <td>Nota Mi</td>
+                        </tr>
+                        <tr>
+                            <td>Letra 'F'</td>
+                            <td>Nota Fá</td>
+                        </tr>
+                        <tr>
+                            <td>Letra 'G'</td>
+                            <td>Nota Sol</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="column">
+                    <table>
+                        <tr>
+                            <th>Texto</th>
+                            <th>Ação</th>
+                        </tr>
+                        <tr>
+                            <td>Letras 'a', 'b', 'c', 'd', 'e', 'f' ou 'g'</td>
+                            <td>Repete a nota se o símbolo anterior era um nota de A à G. Senão, faz uma pausa na música.</td>
+                        </tr>
+                        <tr>
+                            <td>Letras 'O', 'o', 'I', 'i', 'U', 'u'</td>
+                            <td>Troca para o instrumento General MIDI #7 (Harpsichord).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Símbolos 'NL'</td>
+                            <td>Troca para o instrumento General MIDI #15 (Tubular Bells).</td>
+                        </tr>
+                        <tr>
+                            <td>Símbolo ' , '</td>
+                            <td>Troca para o instrumento General MIDI #20 (Church Organ).</td>
+                        </tr>
+                        <tr>
+                            <td>Símbolo ' ; '</td>
+                            <td>Troca para o instrumento General MIDI #76 (Pan Flute).</td>
+                        </tr>
+                        <tr>
+                            <td>Símbolo '!'</td>
+                            <td>Troca para o instrumento General MIDI #114 (Agogo).</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="column">
+                    <table>
+                        <tr>
+                            <th>Texto</th>
+                            <th>Ação</th>
+                        </tr>
+                        <tr>
+                            <td>Outras Consoantes</td>
+                            <td>Repete a nota se o símbolo anterior era um nota de A à G. Senão, faz uma pausa na música.</td>
+                        </tr>
+                        <tr>
+                            <td>Símbolo ' '</td>
+                            <td>Se possível, dobra o valor do volume. Senão, volta ao riginal.</td>
+                        </tr>
+                        <tr>
+                            <td>Símbolo '?'</td>
+                            <td>Se possível, aumenta uma oitva. Senão, volta à original.</td>
+                        </tr>
+                        <tr>
+                            <td>Número</td>
+                            <td>Troca o instrumento para o instrumento General MIDI cujo número é igual ao valor do instrumento atual mais o valor do número lido.</td>
+                        </tr>
+                        <tr>
+                            <td>Demais Textos</td>
+                            <td>Repete a nota se o símbolo anterior era um nota de A à G. Senão, faz uma pausa na música.</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+
+@code
+{
+    // Test variables for software development:
+
+    public bool TestVariableShowActions = true;
+    public List<string> TestVariableActions { get; set; } = new();
+
+    // Index variables for the full functionality of both the classes and Index.razor razor page.
+
+    public string? IndexInputText { get; set; }
+    IFileListEntry? IndexFile { get; set; }
+    IndexController INF01120IndexController = new IndexController("Mostrar instruções.", false);
+
+    @functions
+    {
+        public void GenerateMusic()
+        {
+            if (INF01120IndexController.InputText != null && INF01120IndexController.InputText.Length != 0)
+            {
+                TextCompiler INF01120TextCompiler = new TextCompiler(INF01120IndexController.InputText);
+                INF01120TextCompiler.Compile();
+                TestVariableActions = INF01120TextCompiler.Actions;
+                MusicCompiler INF01120MusicCompiler = new MusicCompiler(INF01120TextCompiler.Actions);
+                MusicPlayer INF01120Sound = new MusicPlayer(INF01120MusicCompiler.CompileMusic());
+                INF01120Sound.SoundOut();
+
+            }
+        }
+
+        public async Task UploadFile(IFileListEntry[] UploadedFile)
+        {
+            IndexFile = UploadedFile.FirstOrDefault();
+            string? Content;
+
+            if (IndexFile != null)
+            {
+                using var IndexStreamReader = new StreamReader(IndexFile.Data);
+                Content = await IndexStreamReader.ReadToEndAsync();
+
+                if (Content != null)
+                {
+                    Content = Content.Length < 100 ? Content : Content.Substring(0, 100);
+                    INF01120IndexController.InputText = Content;
+                    IndexInputText = INF01120IndexController.InputText;
+                }
+            }
+        }
+    }
+}
